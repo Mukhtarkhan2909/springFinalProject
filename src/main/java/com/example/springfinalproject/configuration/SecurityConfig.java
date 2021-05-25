@@ -4,7 +4,6 @@ import com.example.springfinalproject.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
-import org.springframework.http.HttpMethod;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
@@ -26,7 +25,7 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 //                .antMatchers("/courses/**").hasAnyAuthority("ADMIN")
 //                .antMatchers("/resources/**").hasAuthority("TEACHER")
 //                .antMatchers("/users/**").hasAuthority("ADMIN")
-                //.anyRequest().authenticated()
+//                .anyRequest().authenticated()
                 .anyRequest().permitAll()
                 .and()
                 .addFilter(new JwtTokenGeneratorFilter(authenticationManager()))
